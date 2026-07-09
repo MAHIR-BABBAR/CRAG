@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "custom-rag"
+version = "0.1.0"
+description = "Enterprise modular RAG library with hybrid retrieval and open API socket"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "MAHIR BABBAR" }]
+keywords = ["rag", "retrieval", "embeddings", "vector-search"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "pyyaml>=6.0",
+    "httpx>=0.27",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+ingestion = [
+    "charset-normalizer>=3.3",
+    "python-frontmatter>=1.1",
+    "unstructured-client>=0.26",
+    "python-pptx>=1.0",
+    "python-docx>=1.1",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "tree-sitter>=0.22",
+    "tree-sitter-python>=0.23",
+    "tree-sitter-javascript>=0.23",
+    "tree-sitter-typescript>=0.23",
+    "pygments>=2.17",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+    "mypy>=1.9",
+    "types-pyyaml>=6.0",
+]
+
+[project.scripts]
+crag = "custom_rag.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/custom_rag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
