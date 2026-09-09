@@ -23,7 +23,7 @@ class TextParser(BaseParser):
         builder.add(
             block_id="doc_root",
             block_type=BlockType.DOCUMENT,
-            text=text,
+            text="",
             hierarchy_path=["doc"],
         )
 

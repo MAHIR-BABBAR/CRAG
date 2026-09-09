@@ -31,3 +31,25 @@ class ParseFailedError(ParserError):
         self.reason = reason
         super().__init__(f"failed to parse {path}: {reason}")
         self.__cause__ = cause
+
+
+class ChunkError(CRAGError):
+    """Document chunking failed."""
+
+
+class EmbeddingError(CRAGError):
+    """Embedding generation failed."""
+
+    def __init__(self, reason: str, *, cause: Exception | None = None) -> None:
+        self.reason = reason
+        super().__init__(reason)
+        self.__cause__ = cause
+
+
+class StorageError(CRAGError):
+    """Index persistence or lookup failed."""
+
+    def __init__(self, reason: str, *, cause: Exception | None = None) -> None:
+        self.reason = reason
+        super().__init__(reason)
+        self.__cause__ = cause

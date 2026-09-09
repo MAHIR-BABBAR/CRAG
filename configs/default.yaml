@@ -1,0 +1,43 @@
+# CRAG default configuration
+
+embedding:
+  provider: local
+  model: all-MiniLM-L6-v2
+  batch_size: 64
+  dimensions: null
+
+storage:
+  backend: sqlite
+  path: workspace_index/crag.sqlite3
+  collection: default
+  # Exact cosine over every stored vector, either way. `numpy` is the same
+  # search vectorized into one matrix product; neither is an approximate index.
+  dense_search: python
+
+retrieval:
+  mode: hybrid
+  top_k: 5
+  candidate_k: 20
+  rrf_k: 60
+  max_top_k: 100
+  max_candidate_k: 200
+  rerank_enabled: false
+  rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  rerank_top_n: 20
+
+api:
+  host: 127.0.0.1
+  port: 8000
+  # When api_key is set (or CRAG_API_KEY), index/retrieve/context require auth.
+  api_key: null
+  max_index_files: 500
+  # Empty means /v1/index may read any path the server process can read. Set
+  # this whenever the socket is reachable by anything other than you.
+  allowed_index_roots: []
+
+context:
+  max_chars: 4000
+  include_parents: true
+  min_score_high: 0.25
+  min_bm25_high: 1.0
+  min_rrf_high: 0.025

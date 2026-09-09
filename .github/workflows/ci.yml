@@ -1,0 +1,135 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  quality:
+    name: Lint and types
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install package
+        run: pip install -e ".[dev,ingestion,embeddings,storage,numpy]"
+      - name: Ruff
+        run: ruff check src tests scripts examples
+      - name: Ruff format
+        run: ruff format --check src tests scripts examples
+      - name: Mypy
+        run: mypy src
+
+  test:
+    name: Tests (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install package
+        run: pip install -e ".[dev,ingestion,embeddings,storage,numpy]"
+      - name: Pytest with coverage
+        # The SciFact suite downloads a dataset; it is excluded from CI on purpose.
+        run: |
+          pytest -q \
+            --ignore=tests/eval/test_scifact_net.py \
+            --cov=custom_rag \
+            --cov-report=term-missing \
+            --cov-report=xml \
+            --cov-fail-under=80
+        env:
+          CRAG_NET_EVAL: "0"
+      - name: Upload coverage
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
+
+  package:
+    name: Build and install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Build sdist and wheel
+        run: |
+          pip install build twine
+          python -m build
+          twine check dist/*
+      - name: Install the wheel into a clean environment
+        run: |
+          python -m venv /tmp/wheel-env
+          /tmp/wheel-env/bin/pip install dist/*.whl
+      - name: Smoke test the installed console script
+        run: |
+          set -euo pipefail
+          /tmp/wheel-env/bin/crag --version
+          mkdir -p /tmp/smoke-corpus
+          printf '# Hybrid retrieval\n\nBM25 and dense results are fused with RRF.\n' \
+            > /tmp/smoke-corpus/doc.md
+          cd /tmp
+          /tmp/wheel-env/bin/crag index /tmp/smoke-corpus --provider mock --collection smoke
+          /tmp/wheel-env/bin/crag query "hybrid retrieval" \
+            --provider mock --collection smoke --mode hybrid --json \
+            | tee /tmp/query.json
+          python -c "import json,sys; hits=json.load(open('/tmp/query.json'))['hits']; sys.exit(0 if hits else 1)"
+
+  docker:
+    name: Docker demo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate compose file
+        run: docker compose config --quiet
+      - name: Build and start the stack
+        env:
+          CRAG_API_KEY: ci-smoke-key
+        run: docker compose up --build --detach --wait --wait-timeout 600
+      - name: Health and context smoke
+        env:
+          CRAG_API_KEY: ci-smoke-key
+        run: |
+          set -euo pipefail
+          curl -fsS http://127.0.0.1:8000/v1/health
+          curl -fsS -X POST http://127.0.0.1:8000/v1/context \
+            -H "Authorization: Bearer $CRAG_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"query":"How does hybrid retrieval work?","provider":"local","collection":"demo","top_k":5}' \
+            | tee /tmp/context.json
+          python -c "import json,sys; p=json.load(open('/tmp/context.json')); sys.exit(0 if p['citations'] else 1)"
+      - name: Unauthenticated requests must be rejected
+        run: |
+          set -euo pipefail
+          status=$(curl -s -o /dev/null -w '%{http_code}' -X POST \
+            http://127.0.0.1:8000/v1/context \
+            -H "Content-Type: application/json" -d '{"query":"x"}')
+          test "$status" = "401"
+      - name: Server logs
+        if: always()
+        run: docker compose logs --no-color
+      - name: Tear down
+        if: always()
+        run: docker compose down --volumes

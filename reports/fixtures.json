@@ -1,0 +1,222 @@
+{
+  "suite": "fixtures",
+  "provider": "mock",
+  "top_k": 5,
+  "doc_count": 4,
+  "query_count": 10,
+  "modes": {
+    "vector": {
+      "hit_at_k": 0.7,
+      "recall_at_k": 0.7,
+      "mrr": 0.3616666666666667,
+      "ndcg_at_k": 0.4448459118879392,
+      "queries": 10,
+      "rows": [
+        {
+          "query_id": "lex_install_pip",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_python_version",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_first_paragraph",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_greeter_class",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_html_structured",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_parse_file_call",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "empty_nonsense",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 0,
+          "gold_count": 0
+        },
+        {
+          "query_id": "lex_second_paragraph",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_module_docstring",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_cli_usage",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1
+        }
+      ]
+    },
+    "bm25": {
+      "hit_at_k": 0.9,
+      "recall_at_k": 0.9,
+      "mrr": 0.9,
+      "ndcg_at_k": 0.9,
+      "queries": 10,
+      "rows": [
+        {
+          "query_id": "lex_install_pip",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_python_version",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_first_paragraph",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_greeter_class",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_html_structured",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_parse_file_call",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "empty_nonsense",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 0,
+          "gold_count": 0
+        },
+        {
+          "query_id": "lex_second_paragraph",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_module_docstring",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_cli_usage",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        }
+      ]
+    },
+    "hybrid": {
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mrr": 0.9333333333333333,
+      "ndcg_at_k": 0.95,
+      "queries": 10,
+      "rows": [
+        {
+          "query_id": "lex_install_pip",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_python_version",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_first_paragraph",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_greeter_class",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_html_structured",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_parse_file_call",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "empty_nonsense",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 0,
+          "gold_count": 0
+        },
+        {
+          "query_id": "lex_second_paragraph",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_module_docstring",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        },
+        {
+          "query_id": "lex_cli_usage",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "hybrid_minus_bm25_hit": 0.09999999999999998,
+    "hybrid_minus_vector_hit": 0.30000000000000004,
+    "hybrid_minus_bm25_ndcg": 0.04999999999999993,
+    "hybrid_minus_vector_ndcg": 0.5051540881120608
+  }
+}

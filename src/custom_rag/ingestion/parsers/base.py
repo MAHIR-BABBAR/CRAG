@@ -6,7 +6,7 @@ import hashlib
 import re
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import ClassVar, Protocol, runtime_checkable
+from typing import Any, ClassVar, Protocol, runtime_checkable
 
 from charset_normalizer import from_bytes
 
@@ -22,9 +22,9 @@ from custom_rag.core.types import (
 
 @runtime_checkable
 class Parser(Protocol):
-    name: str
-    supported_extensions: frozenset[str]
-    supported_mimes: frozenset[str]
+    name: ClassVar[str]
+    supported_extensions: ClassVar[frozenset[str]]
+    supported_mimes: ClassVar[frozenset[str]]
 
     def can_parse(self, path: Path, mime_type: str | None = None) -> bool: ...
 
@@ -40,9 +40,7 @@ class BaseParser(ABC):
         extension = path.suffix.lower()
         if extension in self.supported_extensions:
             return True
-        if mime_type and mime_type in self.supported_mimes:
-            return True
-        return False
+        return bool(mime_type and mime_type in self.supported_mimes)
 
     @abstractmethod
     def parse(self, path: Path, metadata: DocumentMetadata) -> ParsedDocument: ...
@@ -93,9 +91,9 @@ class BlockBuilder:
         order: int = 0,
         hierarchy_path: list[str] | None = None,
         location: BlockLocation | None = None,
-        metadata: dict | None = None,
+        metadata: dict[str, Any] | None = None,
     ) -> ContentBlock:
-        path = hierarchy_path or ([block_id] if parent_block_id is None else [block_id])
+        path = hierarchy_path or [block_id]
         block = ContentBlock(
             block_id=block_id,
             block_type=block_type,

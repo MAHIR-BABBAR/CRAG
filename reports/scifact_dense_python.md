@@ -1,0 +1,37 @@
+# CRAG eval report - `scifact`
+
+- provider: `local`
+- top_k: `10` documents
+- docs: `5183`
+- queries: `300`
+- rerank: `False`
+
+Metrics are per document: chunks are collapsed to their source document
+before the list is cut to top_k. Brackets are 95% bootstrap intervals
+over queries.
+
+| mode | Hit@k | nDCG@k | Recall@k | MRR | p50 ms | p95 ms |
+|------|------:|-------:|---------:|----:|-------:|-------:|
+| vector | 0.830 [0.787, 0.870] | 0.671 [0.625, 0.713] | 0.815 | 0.631 | 1390.9 | 2030.3 |
+| bm25 | 0.777 [0.730, 0.820] | 0.631 [0.586, 0.675] | 0.757 | 0.598 | 218.3 | 360.2 |
+| hybrid | 0.857 [0.817, 0.893] | 0.690 [0.644, 0.729] | 0.840 | 0.649 | 1922.2 | 2455.5 |
+
+## Comparison
+
+- hybrid - bm25 Hit@k: `+0.080`
+- hybrid - vector Hit@k: `+0.027`
+- hybrid - bm25 nDCG@k: `+0.059`
+- hybrid - vector nDCG@k: `+0.018`
+
+## Run
+
+- commit: `1ef6197-dirty`
+- crag: `0.2.0` | python: `3.14.0`
+- platform: `Windows-11-10.0.26200-SP0`
+- embedding model: `all-MiniLM-L6-v2` via `local`
+- dense search: `python` | candidate_k: `20` | rrf_k: `60`
+- chunks retrieved per requested document: `5`
+- sentence-transformers: `5.4.1` | torch: `2.9.1`
+- index time: `751.32s` | total: `1815.89s`
+- started: `2026-09-09T13:55:38.825222+00:00`
+- dataset: `beir/scifact/test` (full) fingerprint `60a24131166c3789`

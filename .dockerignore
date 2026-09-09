@@ -1,0 +1,17 @@
+.git
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+workspace_index
+reports
+*.sqlite3
+.agent-transcripts
+agent-transcripts
+.cursor
+dist
+build
+*.egg-info

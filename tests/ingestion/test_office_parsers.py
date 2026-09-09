@@ -60,7 +60,20 @@ def test_pptx_parser_builds_slide_parent_and_shape_children(sample_pptx: Path) -
     slides = [block for block in document.blocks if block.block_type == BlockType.SLIDE]
     assert len(slides) == 1
     assert slides[0].metadata.get("slide_title") == "Quarterly Update"
+    assert slides[0].text == "Quarterly Update"
+    assert document.raw_text
+    assert "Revenue increased 12%" in (document.raw_text or "")
 
     children = document.children_of(slides[0].block_id)
     assert children
     assert any(child.block_type == BlockType.SHAPE for child in children)
+
+
+def test_pptx_parent_chunk_does_not_duplicate_shape_text(sample_pptx: Path) -> None:
+    from custom_rag.ingestion.chunkers import chunk_document
+
+    document = parse_file(sample_pptx)
+    chunked = chunk_document(document)
+    slide_parent = next(chunk for chunk in chunked.parents() if chunk.block_type == BlockType.SLIDE)
+    assert slide_parent.text.count("Revenue increased 12%") == 1
+    assert slide_parent.text.count("Quarterly Update") == 1

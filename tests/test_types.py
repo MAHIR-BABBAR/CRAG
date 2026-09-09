@@ -7,7 +7,15 @@ from datetime import UTC, datetime
 import pytest
 from pydantic import ValidationError
 
-from custom_rag.core.types import BlockType, ContentBlock, DocumentMetadata, ParsedDocument
+from custom_rag.core.types import (
+    BlockType,
+    Chunk,
+    ChunkedDocument,
+    ChunkRole,
+    ContentBlock,
+    DocumentMetadata,
+    ParsedDocument,
+)
 
 
 def _metadata() -> DocumentMetadata:
@@ -58,3 +66,46 @@ def test_parsed_document_children_of() -> None:
     children = document.children_of("doc_root")
     assert len(children) == 1
     assert children[0].block_id == "p_0"
+
+
+def test_chunked_document_rejects_unknown_parent_chunk() -> None:
+    with pytest.raises(ValidationError):
+        ChunkedDocument(
+            metadata=_metadata(),
+            chunks=[
+                Chunk(
+                    chunk_id="child_1",
+                    role=ChunkRole.CHILD,
+                    text="hello",
+                    source_block_id="p_1",
+                    parent_chunk_id="missing",
+                    block_type=BlockType.PARAGRAPH,
+                )
+            ],
+        )
+
+
+def test_chunked_document_parent_of() -> None:
+    chunked = ChunkedDocument(
+        metadata=_metadata(),
+        chunks=[
+            Chunk(
+                chunk_id="parent_1",
+                role=ChunkRole.PARENT,
+                text="parent text",
+                source_block_id="section_1",
+                block_type=BlockType.SECTION,
+            ),
+            Chunk(
+                chunk_id="child_1",
+                role=ChunkRole.CHILD,
+                text="child text",
+                source_block_id="p_1",
+                parent_chunk_id="parent_1",
+                block_type=BlockType.PARAGRAPH,
+            ),
+        ],
+    )
+    parent = chunked.parent_of("child_1")
+    assert parent is not None
+    assert parent.chunk_id == "parent_1"

@@ -1,0 +1,10 @@
+CRAG API Socket
+
+Endpoints:
+- GET /v1/health — liveness and storage path
+- POST /v1/index — index a file or directory
+- POST /v1/retrieve — return ranked hits with parents
+- POST /v1/context — packed context plus citations
+
+When CRAG_API_KEY is set, index/retrieve/context require Authorization Bearer or X-API-Key.
+Health stays open for probes.

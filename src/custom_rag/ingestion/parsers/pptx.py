@@ -45,6 +45,16 @@ class PPTXParser(BaseParser):
             if title:
                 slide_parts.append(title)
 
+            builder.add(
+                block_id=slide_id,
+                block_type=BlockType.SLIDE,
+                text=title or "",
+                order=slide_index,
+                hierarchy_path=["doc", slide_id],
+                location=BlockLocation(slide_number=slide_index),
+                metadata={"slide_title": title, "slide_number": slide_index},
+            )
+
             for shape in slide.shapes:
                 if not getattr(shape, "has_text_frame", False):
                     if getattr(shape, "has_table", False):
@@ -98,17 +108,7 @@ class PPTXParser(BaseParser):
                 )
                 slide_parts.append(notes_text)
 
-            slide_text = "\n".join(slide_parts)
-            builder.add(
-                block_id=slide_id,
-                block_type=BlockType.SLIDE,
-                text=slide_text,
-                order=slide_index,
-                hierarchy_path=["doc", slide_id],
-                location=BlockLocation(slide_number=slide_index),
-                metadata={"slide_title": title, "slide_number": slide_index},
-            )
-            raw_parts.append(slide_text)
+            raw_parts.append("\n".join(slide_parts))
 
         doc_metadata = metadata.model_copy(update={"doc_type": "pptx"})
         return ParsedDocument(
@@ -125,12 +125,12 @@ def _slide_title(slide: object) -> str | None:
     title_shape = getattr(shapes, "title", None)
     if title_shape is None or not getattr(title_shape, "text", ""):
         return None
-    return title_shape.text.strip()
+    return str(title_shape.text).strip()
 
 
 def _speaker_notes(slide: object) -> str | None:
     notes_slide = getattr(slide, "notes_slide", None)
     if notes_slide is None or notes_slide.notes_text_frame is None:
         return None
-    text = notes_slide.notes_text_frame.text.strip()  # type: ignore[union-attr]
+    text = str(notes_slide.notes_text_frame.text).strip()
     return text or None
