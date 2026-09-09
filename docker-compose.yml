@@ -1,0 +1,23 @@
+services:
+  crag:
+    build: .
+    # Loopback only. The socket can read local files, so do not publish it on
+    # 0.0.0.0 without setting CRAG_API_KEY to something that is not the default.
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      CRAG_STORAGE_PATH: /data/crag.sqlite3
+      CRAG_COLLECTION: demo
+      EMBEDDING_PROVIDER: local
+      EMBEDDING_MODEL: all-MiniLM-L6-v2
+      CRAG_RETRIEVAL_MODE: hybrid
+      CRAG_API_HOST: 0.0.0.0
+      CRAG_API_PORT: "8000"
+      CRAG_API_KEY: ${CRAG_API_KEY:-crag-demo-key}
+      CRAG_ALLOWED_INDEX_ROOTS: /app/demo_corpus
+    volumes:
+      - crag-data:/data
+      - ./demo_corpus:/app/demo_corpus:ro
+
+volumes:
+  crag-data:

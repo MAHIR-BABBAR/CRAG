@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import os
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any, Literal
 
-from custom_rag.core.exceptions import ConfigError, ParseFailedError
+from custom_rag.core.exceptions import ConfigError, ParseFailedError, ParserError
 from custom_rag.core.types import DocumentMetadata, ParsedDocument
 from custom_rag.ingestion.parsers.base import BaseParser
-from custom_rag.ingestion.parsers.pdf.mapper import map_elements_to_blocks
+from custom_rag.ingestion.parsers.pdf.mapper import accepted_element_texts, map_elements_to_blocks
 
 PdfStrategy = Literal["vlm", "hi_res", "auto"]
 
@@ -42,7 +43,8 @@ class UnstructuredPDFParser(BaseParser):
 
         elements = self._partition(path, api_key)
         blocks = map_elements_to_blocks(elements)
-        raw_text = "\n\n".join(block.text for block in blocks if block.text)
+        raw_parts = accepted_element_texts(elements)
+        raw_text = "\n\n".join(raw_parts) if raw_parts else None
 
         doc_metadata = metadata.model_copy(
             update={
@@ -56,7 +58,7 @@ class UnstructuredPDFParser(BaseParser):
                 },
             }
         )
-        return ParsedDocument(metadata=doc_metadata, blocks=blocks, raw_text=raw_text or None)
+        return ParsedDocument(metadata=doc_metadata, blocks=blocks, raw_text=raw_text)
 
     def _partition(self, path: Path, api_key: str) -> list[dict[str, Any]]:
         try:
@@ -105,9 +107,14 @@ class UnstructuredPDFParser(BaseParser):
 
 
 def _element_to_dict(element: object) -> dict[str, Any]:
-    if isinstance(element, dict):
-        return element
+    """Normalize one Unstructured element, whatever shape the SDK returned it in."""
+    if isinstance(element, Mapping):
+        return {str(key): value for key, value in element.items()}
     model_dump = getattr(element, "model_dump", None)
     if callable(model_dump):
-        return model_dump()
-    return dict(element)  # type: ignore[arg-type]
+        dumped = model_dump()
+        if isinstance(dumped, Mapping):
+            return {str(key): value for key, value in dumped.items()}
+    raise ParserError(
+        f"Unstructured returned an element of unexpected type: {type(element).__name__}"
+    )

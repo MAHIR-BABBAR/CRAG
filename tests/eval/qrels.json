@@ -1,0 +1,84 @@
+{
+  "description": "Golden qrels over tests/fixtures. Judged by source_contains + text_contains.",
+  "queries": [
+    {
+      "id": "lex_install_pip",
+      "query": "Install the package with pip",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.md", "text_contains": "Install the package with pip"}
+      ]
+    },
+    {
+      "id": "lex_python_version",
+      "query": "Python 3.11 or newer",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.md", "text_contains": "Python 3.11"}
+      ]
+    },
+    {
+      "id": "lex_first_paragraph",
+      "query": "First paragraph",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.txt", "text_contains": "First paragraph"}
+      ]
+    },
+    {
+      "id": "lex_greeter_class",
+      "query": "class Greeter",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.py", "text_contains": "Greeter"}
+      ]
+    },
+    {
+      "id": "lex_html_structured",
+      "query": "CRAG parses HTML into structured blocks",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.html", "text_contains": "structured blocks"}
+      ]
+    },
+    {
+      "id": "lex_parse_file_call",
+      "query": "parse_file page.html",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.html", "text_contains": "parse_file"}
+      ]
+    },
+    {
+      "id": "empty_nonsense",
+      "query": "xyzzy_no_such_token_98765_qqq",
+      "focus": "empty",
+      "expect_empty": true,
+      "relevant": []
+    },
+    {
+      "id": "lex_second_paragraph",
+      "query": "Second paragraph",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.txt", "text_contains": "Second paragraph"}
+      ]
+    },
+    {
+      "id": "lex_module_docstring",
+      "query": "Module docstring for sample code fixture",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.py", "text_contains": "Module docstring"}
+      ]
+    },
+    {
+      "id": "lex_cli_usage",
+      "query": "Run the CLI to parse documents",
+      "focus": "lexical",
+      "relevant": [
+        {"source_contains": "sample.md", "text_contains": "Run the CLI"}
+      ]
+    }
+  ]
+}

@@ -4,15 +4,15 @@ build-backend = "hatchling.build"
 
 [project]
 name = "custom-rag"
-version = "0.1.0"
-description = "Enterprise modular RAG library with hybrid retrieval and open API socket"
+version = "0.2.0"
+description = "Local hybrid retrieval service for agents: parse, chunk, embed, SQLite hybrid search, packed context API"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{ name = "MAHIR BABBAR" }]
 keywords = ["rag", "retrieval", "embeddings", "vector-search"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,6 +29,12 @@ dependencies = [
     "uvicorn[standard]>=0.27",
     "click>=8.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/MAHIR-BABBAR/CRAG"
+Repository = "https://github.com/MAHIR-BABBAR/CRAG"
+Issues = "https://github.com/MAHIR-BABBAR/CRAG/issues"
+Changelog = "https://github.com/MAHIR-BABBAR/CRAG/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 ingestion = [
@@ -48,9 +54,26 @@ ingestion = [
 dev = [
     "pytest>=8.0",
     "pytest-asyncio>=0.23",
+    "pytest-cov>=5.0",
     "ruff>=0.4",
     "mypy>=1.9",
     "types-pyyaml>=6.0",
+    "build>=1.2",
+    "twine>=5.0",
+]
+embeddings = [
+    "openai>=1.40",
+    "sentence-transformers>=3.0",
+]
+storage = [
+    "numpy>=1.26",
+]
+# Vectorized exact cosine search. Not an approximate index; see docs/adr/0003.
+numpy = [
+    "numpy>=1.26",
+]
+eval = [
+    "ir-datasets>=0.5",
 ]
 
 [project.scripts]
@@ -62,16 +85,47 @@ packages = ["src/custom_rag"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+markers = [
+    "network: tests that download datasets from the internet (set CRAG_NET_EVAL=1)",
+]
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "UP"]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# `Depends(...)` in a parameter default is how FastAPI declares dependencies.
+"src/custom_rag/api/*.py" = ["B008"]
 
 [tool.mypy]
-python_version = "3.11"
+# 3.12 so mypy can parse modern stub syntax in third-party packages; the code
+# itself stays compatible with the 3.11 floor declared in requires-python.
+python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
+disallow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "ir_datasets.*",
+    "sentence_transformers.*",
+    "openai.*",
+]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["src/custom_rag"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "\\.\\.\\.",
+]

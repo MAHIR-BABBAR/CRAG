@@ -1,0 +1,6456 @@
+{
+  "suite": "scifact",
+  "provider": "local",
+  "top_k": 10,
+  "doc_count": 5183,
+  "query_count": 300,
+  "cache_dir": "workspace_index\\eval_cache\\scifact",
+  "rerank": false,
+  "dataset": {
+    "name": "scifact",
+    "dataset_id": "beir/scifact/test",
+    "doc_count": 5183,
+    "query_count": 300,
+    "fingerprint": "60a24131166c3789",
+    "subset": false
+  },
+  "run": {
+    "environment": {
+      "crag_version": "0.2.0",
+      "git_commit": "1ef6197-dirty",
+      "python": "3.14.0",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "packages": {
+        "sentence-transformers": "5.4.1",
+        "torch": "2.9.1",
+        "numpy": "2.5.1",
+        "ir-datasets": "0.6.3"
+      }
+    },
+    "started_at": "2026-09-09T14:24:05.512327+00:00",
+    "retrieval": {
+      "provider": "local",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "top_k": 10,
+      "candidate_k": 20,
+      "rrf_k": 60,
+      "chunk_multiplier": 5,
+      "dense_search": "numpy",
+      "rerank": false,
+      "rerank_model": null
+    },
+    "grading": {
+      "unit": "document",
+      "note": "Chunks are collapsed to their source document before cutting to top_k, so metrics are per document and comparable to document-level IR results."
+    },
+    "index_seconds": 506.86,
+    "total_seconds": 1096.06
+  },
+  "modes": {
+    "vector": {
+      "hit_at_k": 0.83,
+      "recall_at_k": 0.8154444444444444,
+      "mrr": 0.6310846560846561,
+      "ndcg_at_k": 0.6713874490476205,
+      "queries": 300,
+      "confidence_intervals": {
+        "hit_at_k": {
+          "low": 0.7866666666666666,
+          "high": 0.87
+        },
+        "recall_at_k": {
+          "low": 0.7699999999999999,
+          "high": 0.8576666666666667
+        },
+        "mrr": {
+          "low": 0.5820582010582009,
+          "high": 0.6758359788359791
+        },
+        "ndcg_at_k": {
+          "low": 0.6248041284902814,
+          "high": 0.7125816786422992
+        }
+      },
+      "latency_ms": {
+        "mean_ms": 673.81,
+        "p50_ms": 704.42,
+        "p95_ms": 939.36,
+        "max_ms": 1241.37
+      },
+      "rows": [
+        {
+          "query_id": "1",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 518.43
+        },
+        {
+          "query_id": "3",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 458.46
+        },
+        {
+          "query_id": "5",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 476.72
+        },
+        {
+          "query_id": "13",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 455.51
+        },
+        {
+          "query_id": "36",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 467.2
+        },
+        {
+          "query_id": "42",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 457.47
+        },
+        {
+          "query_id": "48",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 523.28
+        },
+        {
+          "query_id": "49",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 453.19
+        },
+        {
+          "query_id": "50",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 449.22
+        },
+        {
+          "query_id": "51",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 462.61
+        },
+        {
+          "query_id": "53",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 540.78
+        },
+        {
+          "query_id": "54",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 494.55
+        },
+        {
+          "query_id": "56",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 488.8
+        },
+        {
+          "query_id": "57",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 452.34
+        },
+        {
+          "query_id": "70",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 469.61
+        },
+        {
+          "query_id": "72",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 507.74
+        },
+        {
+          "query_id": "75",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 463.02
+        },
+        {
+          "query_id": "94",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 460.19
+        },
+        {
+          "query_id": "99",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 471.33
+        },
+        {
+          "query_id": "100",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 463.35
+        },
+        {
+          "query_id": "113",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 470.55
+        },
+        {
+          "query_id": "115",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 460.52
+        },
+        {
+          "query_id": "118",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 455.47
+        },
+        {
+          "query_id": "124",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 459.86
+        },
+        {
+          "query_id": "127",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 514.4
+        },
+        {
+          "query_id": "128",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 460.95
+        },
+        {
+          "query_id": "129",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 475.44
+        },
+        {
+          "query_id": "130",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 452.42
+        },
+        {
+          "query_id": "132",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 462.88
+        },
+        {
+          "query_id": "133",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 3,
+          "gold_count": 5,
+          "latency_ms": 471.23
+        },
+        {
+          "query_id": "137",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 455.97
+        },
+        {
+          "query_id": "141",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 462.2
+        },
+        {
+          "query_id": "142",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 467.41
+        },
+        {
+          "query_id": "143",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 486.95
+        },
+        {
+          "query_id": "146",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 509.64
+        },
+        {
+          "query_id": "148",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 476.51
+        },
+        {
+          "query_id": "163",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 460.89
+        },
+        {
+          "query_id": "171",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 511.12
+        },
+        {
+          "query_id": "179",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 4,
+          "gold_count": 4,
+          "latency_ms": 496.34
+        },
+        {
+          "query_id": "180",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 515.8
+        },
+        {
+          "query_id": "183",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 527.93
+        },
+        {
+          "query_id": "185",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 583.82
+        },
+        {
+          "query_id": "198",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 513.83
+        },
+        {
+          "query_id": "208",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 547.25
+        },
+        {
+          "query_id": "212",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 493.84
+        },
+        {
+          "query_id": "213",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 500.64
+        },
+        {
+          "query_id": "216",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 505.53
+        },
+        {
+          "query_id": "217",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 505.35
+        },
+        {
+          "query_id": "218",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 495.28
+        },
+        {
+          "query_id": "219",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 493.79
+        },
+        {
+          "query_id": "230",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 496.18
+        },
+        {
+          "query_id": "232",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 498.86
+        },
+        {
+          "query_id": "233",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 536.71
+        },
+        {
+          "query_id": "236",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 490.24
+        },
+        {
+          "query_id": "237",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 508.87
+        },
+        {
+          "query_id": "238",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 483.69
+        },
+        {
+          "query_id": "239",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 475.46
+        },
+        {
+          "query_id": "248",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 474.96
+        },
+        {
+          "query_id": "249",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 483.77
+        },
+        {
+          "query_id": "261",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 474.82
+        },
+        {
+          "query_id": "268",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 468.73
+        },
+        {
+          "query_id": "269",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 517.97
+        },
+        {
+          "query_id": "274",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 470.66
+        },
+        {
+          "query_id": "275",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 2,
+          "gold_count": 3,
+          "latency_ms": 502.18
+        },
+        {
+          "query_id": "279",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 501.04
+        },
+        {
+          "query_id": "294",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 471.13
+        },
+        {
+          "query_id": "295",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 463.37
+        },
+        {
+          "query_id": "298",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 472.55
+        },
+        {
+          "query_id": "300",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 465.71
+        },
+        {
+          "query_id": "303",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 463.06
+        },
+        {
+          "query_id": "312",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 520.77
+        },
+        {
+          "query_id": "314",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 461.39
+        },
+        {
+          "query_id": "324",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 468.47
+        },
+        {
+          "query_id": "327",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 458.34
+        },
+        {
+          "query_id": "338",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 456.64
+        },
+        {
+          "query_id": "343",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 460.27
+        },
+        {
+          "query_id": "350",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 458.71
+        },
+        {
+          "query_id": "354",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 470.19
+        },
+        {
+          "query_id": "362",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 498.68
+        },
+        {
+          "query_id": "380",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 515.36
+        },
+        {
+          "query_id": "384",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 449.61
+        },
+        {
+          "query_id": "385",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 465.61
+        },
+        {
+          "query_id": "386",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 459.44
+        },
+        {
+          "query_id": "388",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 466.67
+        },
+        {
+          "query_id": "399",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 457.05
+        },
+        {
+          "query_id": "410",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 455.62
+        },
+        {
+          "query_id": "411",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 447.41
+        },
+        {
+          "query_id": "415",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 465.71
+        },
+        {
+          "query_id": "421",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 464.61
+        },
+        {
+          "query_id": "431",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 501.21
+        },
+        {
+          "query_id": "436",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 468.25
+        },
+        {
+          "query_id": "437",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 473.4
+        },
+        {
+          "query_id": "439",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 480.34
+        },
+        {
+          "query_id": "440",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 478.04
+        },
+        {
+          "query_id": "443",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 464.41
+        },
+        {
+          "query_id": "452",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 445.08
+        },
+        {
+          "query_id": "475",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 444.7
+        },
+        {
+          "query_id": "478",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 480.7
+        },
+        {
+          "query_id": "491",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 521.38
+        },
+        {
+          "query_id": "501",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 468.25
+        },
+        {
+          "query_id": "502",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 467.66
+        },
+        {
+          "query_id": "507",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 467.31
+        },
+        {
+          "query_id": "508",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 458.86
+        },
+        {
+          "query_id": "513",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 456.4
+        },
+        {
+          "query_id": "514",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 440.08
+        },
+        {
+          "query_id": "516",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 426.83
+        },
+        {
+          "query_id": "517",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 418.7
+        },
+        {
+          "query_id": "521",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 976.97
+        },
+        {
+          "query_id": "525",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1025.83
+        },
+        {
+          "query_id": "527",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 718.38
+        },
+        {
+          "query_id": "528",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 667.84
+        },
+        {
+          "query_id": "532",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 777.98
+        },
+        {
+          "query_id": "533",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 740.81
+        },
+        {
+          "query_id": "535",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 761.75
+        },
+        {
+          "query_id": "536",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 827.69
+        },
+        {
+          "query_id": "539",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1007.45
+        },
+        {
+          "query_id": "540",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 896.83
+        },
+        {
+          "query_id": "544",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 746.24
+        },
+        {
+          "query_id": "549",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 676.47
+        },
+        {
+          "query_id": "551",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 868.11
+        },
+        {
+          "query_id": "552",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 851.91
+        },
+        {
+          "query_id": "554",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 835.79
+        },
+        {
+          "query_id": "560",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 805.0
+        },
+        {
+          "query_id": "569",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 798.36
+        },
+        {
+          "query_id": "575",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 769.82
+        },
+        {
+          "query_id": "577",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 939.65
+        },
+        {
+          "query_id": "578",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 757.71
+        },
+        {
+          "query_id": "587",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 821.1
+        },
+        {
+          "query_id": "589",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 891.41
+        },
+        {
+          "query_id": "593",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 838.41
+        },
+        {
+          "query_id": "597",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 3,
+          "latency_ms": 863.51
+        },
+        {
+          "query_id": "598",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 530.98
+        },
+        {
+          "query_id": "613",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 949.93
+        },
+        {
+          "query_id": "619",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 871.64
+        },
+        {
+          "query_id": "623",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 954.57
+        },
+        {
+          "query_id": "628",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 886.65
+        },
+        {
+          "query_id": "636",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 786.73
+        },
+        {
+          "query_id": "637",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 842.74
+        },
+        {
+          "query_id": "641",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 793.77
+        },
+        {
+          "query_id": "644",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 727.44
+        },
+        {
+          "query_id": "649",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 836.03
+        },
+        {
+          "query_id": "659",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 696.99
+        },
+        {
+          "query_id": "660",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 818.2
+        },
+        {
+          "query_id": "674",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 870.92
+        },
+        {
+          "query_id": "684",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 828.18
+        },
+        {
+          "query_id": "690",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 994.93
+        },
+        {
+          "query_id": "691",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 782.16
+        },
+        {
+          "query_id": "692",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 630.51
+        },
+        {
+          "query_id": "693",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 704.75
+        },
+        {
+          "query_id": "700",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 797.36
+        },
+        {
+          "query_id": "702",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 822.39
+        },
+        {
+          "query_id": "715",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 902.98
+        },
+        {
+          "query_id": "716",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 850.35
+        },
+        {
+          "query_id": "718",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 889.35
+        },
+        {
+          "query_id": "721",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 721.02
+        },
+        {
+          "query_id": "723",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 848.05
+        },
+        {
+          "query_id": "727",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 715.16
+        },
+        {
+          "query_id": "728",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 824.75
+        },
+        {
+          "query_id": "729",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 828.65
+        },
+        {
+          "query_id": "742",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 821.53
+        },
+        {
+          "query_id": "743",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 696.81
+        },
+        {
+          "query_id": "744",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 619.41
+        },
+        {
+          "query_id": "756",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 833.82
+        },
+        {
+          "query_id": "759",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 624.22
+        },
+        {
+          "query_id": "768",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 806.28
+        },
+        {
+          "query_id": "770",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 794.7
+        },
+        {
+          "query_id": "775",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 900.3
+        },
+        {
+          "query_id": "781",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 860.14
+        },
+        {
+          "query_id": "783",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 885.57
+        },
+        {
+          "query_id": "784",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 893.49
+        },
+        {
+          "query_id": "785",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 854.66
+        },
+        {
+          "query_id": "793",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 607.2
+        },
+        {
+          "query_id": "800",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 956.56
+        },
+        {
+          "query_id": "805",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 831.81
+        },
+        {
+          "query_id": "808",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 621.58
+        },
+        {
+          "query_id": "811",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 668.78
+        },
+        {
+          "query_id": "814",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 806.17
+        },
+        {
+          "query_id": "820",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 801.79
+        },
+        {
+          "query_id": "821",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 793.8
+        },
+        {
+          "query_id": "823",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 856.09
+        },
+        {
+          "query_id": "830",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 909.43
+        },
+        {
+          "query_id": "831",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 852.4
+        },
+        {
+          "query_id": "832",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 894.71
+        },
+        {
+          "query_id": "834",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 721.41
+        },
+        {
+          "query_id": "837",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 776.28
+        },
+        {
+          "query_id": "839",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 664.98
+        },
+        {
+          "query_id": "845",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 879.95
+        },
+        {
+          "query_id": "847",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 914.47
+        },
+        {
+          "query_id": "852",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 729.39
+        },
+        {
+          "query_id": "859",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 658.74
+        },
+        {
+          "query_id": "870",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 867.11
+        },
+        {
+          "query_id": "873",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 5,
+          "latency_ms": 867.72
+        },
+        {
+          "query_id": "879",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 824.3
+        },
+        {
+          "query_id": "880",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 833.04
+        },
+        {
+          "query_id": "882",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 960.35
+        },
+        {
+          "query_id": "887",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 732.69
+        },
+        {
+          "query_id": "903",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 919.68
+        },
+        {
+          "query_id": "904",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 834.27
+        },
+        {
+          "query_id": "907",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 906.55
+        },
+        {
+          "query_id": "911",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1130.11
+        },
+        {
+          "query_id": "913",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 757.21
+        },
+        {
+          "query_id": "914",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 672.27
+        },
+        {
+          "query_id": "921",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 854.01
+        },
+        {
+          "query_id": "922",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 877.8
+        },
+        {
+          "query_id": "936",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 874.04
+        },
+        {
+          "query_id": "956",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1241.37
+        },
+        {
+          "query_id": "957",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 965.55
+        },
+        {
+          "query_id": "960",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 955.04
+        },
+        {
+          "query_id": "967",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 922.18
+        },
+        {
+          "query_id": "971",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 4,
+          "gold_count": 4,
+          "latency_ms": 857.07
+        },
+        {
+          "query_id": "975",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 677.77
+        },
+        {
+          "query_id": "982",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 897.07
+        },
+        {
+          "query_id": "985",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 761.78
+        },
+        {
+          "query_id": "993",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 799.01
+        },
+        {
+          "query_id": "1012",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 391.54
+        },
+        {
+          "query_id": "1014",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 379.82
+        },
+        {
+          "query_id": "1019",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 691.93
+        },
+        {
+          "query_id": "1020",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 939.36
+        },
+        {
+          "query_id": "1021",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1017.22
+        },
+        {
+          "query_id": "1024",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 847.44
+        },
+        {
+          "query_id": "1029",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 605.24
+        },
+        {
+          "query_id": "1041",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 398.04
+        },
+        {
+          "query_id": "1049",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 401.35
+        },
+        {
+          "query_id": "1062",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 400.76
+        },
+        {
+          "query_id": "1086",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 409.82
+        },
+        {
+          "query_id": "1088",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 390.94
+        },
+        {
+          "query_id": "1089",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 718.79
+        },
+        {
+          "query_id": "1099",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 912.79
+        },
+        {
+          "query_id": "1100",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 822.14
+        },
+        {
+          "query_id": "1104",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 862.91
+        },
+        {
+          "query_id": "1107",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 755.6
+        },
+        {
+          "query_id": "1110",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 714.48
+        },
+        {
+          "query_id": "1121",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 662.45
+        },
+        {
+          "query_id": "1130",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 647.62
+        },
+        {
+          "query_id": "1132",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 663.77
+        },
+        {
+          "query_id": "1137",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 730.1
+        },
+        {
+          "query_id": "1140",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 764.12
+        },
+        {
+          "query_id": "1144",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 826.69
+        },
+        {
+          "query_id": "1146",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 728.31
+        },
+        {
+          "query_id": "1150",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 716.53
+        },
+        {
+          "query_id": "1163",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 756.03
+        },
+        {
+          "query_id": "1175",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 775.54
+        },
+        {
+          "query_id": "1179",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 683.76
+        },
+        {
+          "query_id": "1180",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 688.65
+        },
+        {
+          "query_id": "1185",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 744.29
+        },
+        {
+          "query_id": "1187",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 759.41
+        },
+        {
+          "query_id": "1191",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 704.42
+        },
+        {
+          "query_id": "1194",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 710.08
+        },
+        {
+          "query_id": "1196",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 708.97
+        },
+        {
+          "query_id": "1197",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 858.78
+        },
+        {
+          "query_id": "1199",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 665.46
+        },
+        {
+          "query_id": "1200",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 638.22
+        },
+        {
+          "query_id": "1202",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 642.28
+        },
+        {
+          "query_id": "1204",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 725.96
+        },
+        {
+          "query_id": "1207",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 742.39
+        },
+        {
+          "query_id": "1213",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 689.45
+        },
+        {
+          "query_id": "1216",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 656.48
+        },
+        {
+          "query_id": "1221",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 774.2
+        },
+        {
+          "query_id": "1225",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 776.52
+        },
+        {
+          "query_id": "1226",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 732.57
+        },
+        {
+          "query_id": "1232",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 697.79
+        },
+        {
+          "query_id": "1241",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 678.93
+        },
+        {
+          "query_id": "1245",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 732.01
+        },
+        {
+          "query_id": "1259",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 777.32
+        },
+        {
+          "query_id": "1262",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 773.26
+        },
+        {
+          "query_id": "1266",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 744.14
+        },
+        {
+          "query_id": "1270",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 728.18
+        },
+        {
+          "query_id": "1271",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 742.23
+        },
+        {
+          "query_id": "1272",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 746.52
+        },
+        {
+          "query_id": "1273",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 900.91
+        },
+        {
+          "query_id": "1274",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 783.75
+        },
+        {
+          "query_id": "1278",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 701.64
+        },
+        {
+          "query_id": "1279",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 889.78
+        },
+        {
+          "query_id": "1280",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 857.43
+        },
+        {
+          "query_id": "1281",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 884.38
+        },
+        {
+          "query_id": "1282",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1017.87
+        },
+        {
+          "query_id": "1290",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 742.2
+        },
+        {
+          "query_id": "1292",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 657.68
+        },
+        {
+          "query_id": "1298",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 692.38
+        },
+        {
+          "query_id": "1303",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 759.91
+        },
+        {
+          "query_id": "1316",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 871.28
+        },
+        {
+          "query_id": "1319",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 927.25
+        },
+        {
+          "query_id": "1320",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 748.44
+        },
+        {
+          "query_id": "1332",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 683.86
+        },
+        {
+          "query_id": "1335",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 719.82
+        },
+        {
+          "query_id": "1336",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 800.26
+        },
+        {
+          "query_id": "1337",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 886.94
+        },
+        {
+          "query_id": "1339",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 778.32
+        },
+        {
+          "query_id": "1344",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 705.29
+        },
+        {
+          "query_id": "1352",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 637.95
+        },
+        {
+          "query_id": "1359",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 741.54
+        },
+        {
+          "query_id": "1362",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 866.0
+        },
+        {
+          "query_id": "1363",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 695.54
+        },
+        {
+          "query_id": "1368",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 680.4
+        },
+        {
+          "query_id": "1370",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 832.45
+        },
+        {
+          "query_id": "1379",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 4,
+          "gold_count": 4,
+          "latency_ms": 749.19
+        },
+        {
+          "query_id": "1382",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 774.4
+        },
+        {
+          "query_id": "1385",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 918.3
+        },
+        {
+          "query_id": "1389",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 727.15
+        },
+        {
+          "query_id": "1395",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 752.12
+        }
+      ]
+    },
+    "bm25": {
+      "hit_at_k": 0.7766666666666666,
+      "recall_at_k": 0.7573333333333333,
+      "mrr": 0.5978320105820106,
+      "ndcg_at_k": 0.6310495928683557,
+      "queries": 300,
+      "confidence_intervals": {
+        "hit_at_k": {
+          "low": 0.73,
+          "high": 0.82
+        },
+        "recall_at_k": {
+          "low": 0.7094444444444445,
+          "high": 0.8012222222222222
+        },
+        "mrr": {
+          "low": 0.5491785714285713,
+          "high": 0.6443465608465608
+        },
+        "ndcg_at_k": {
+          "low": 0.5857689867992123,
+          "high": 0.6745199027078771
+        }
+      },
+      "latency_ms": {
+        "mean_ms": 284.52,
+        "p50_ms": 309.1,
+        "p95_ms": 413.65,
+        "max_ms": 448.64
+      },
+      "rows": [
+        {
+          "query_id": "1",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 62.77
+        },
+        {
+          "query_id": "3",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 271.25
+        },
+        {
+          "query_id": "5",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 216.75
+        },
+        {
+          "query_id": "13",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 325.34
+        },
+        {
+          "query_id": "36",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 230.97
+        },
+        {
+          "query_id": "42",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 228.35
+        },
+        {
+          "query_id": "48",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 286.71
+        },
+        {
+          "query_id": "49",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 199.17
+        },
+        {
+          "query_id": "50",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 329.84
+        },
+        {
+          "query_id": "51",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 224.15
+        },
+        {
+          "query_id": "53",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 254.95
+        },
+        {
+          "query_id": "54",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 358.01
+        },
+        {
+          "query_id": "56",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 241.11
+        },
+        {
+          "query_id": "57",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 220.71
+        },
+        {
+          "query_id": "70",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 208.42
+        },
+        {
+          "query_id": "72",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 202.21
+        },
+        {
+          "query_id": "75",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 224.38
+        },
+        {
+          "query_id": "94",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 257.61
+        },
+        {
+          "query_id": "99",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 211.56
+        },
+        {
+          "query_id": "100",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 176.91
+        },
+        {
+          "query_id": "113",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 358.02
+        },
+        {
+          "query_id": "115",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 334.13
+        },
+        {
+          "query_id": "118",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 316.69
+        },
+        {
+          "query_id": "124",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 182.03
+        },
+        {
+          "query_id": "127",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 167.36
+        },
+        {
+          "query_id": "128",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 73.3
+        },
+        {
+          "query_id": "129",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 216.22
+        },
+        {
+          "query_id": "130",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 192.83
+        },
+        {
+          "query_id": "132",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 243.75
+        },
+        {
+          "query_id": "133",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 5,
+          "latency_ms": 382.82
+        },
+        {
+          "query_id": "137",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 222.98
+        },
+        {
+          "query_id": "141",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 179.86
+        },
+        {
+          "query_id": "142",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 253.08
+        },
+        {
+          "query_id": "143",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 247.23
+        },
+        {
+          "query_id": "146",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 280.25
+        },
+        {
+          "query_id": "148",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 282.17
+        },
+        {
+          "query_id": "163",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 192.29
+        },
+        {
+          "query_id": "171",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 276.87
+        },
+        {
+          "query_id": "179",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 4,
+          "latency_ms": 250.71
+        },
+        {
+          "query_id": "180",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 266.86
+        },
+        {
+          "query_id": "183",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 249.74
+        },
+        {
+          "query_id": "185",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 241.79
+        },
+        {
+          "query_id": "198",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 222.45
+        },
+        {
+          "query_id": "208",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 342.02
+        },
+        {
+          "query_id": "212",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 312.72
+        },
+        {
+          "query_id": "213",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 362.44
+        },
+        {
+          "query_id": "216",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 251.67
+        },
+        {
+          "query_id": "217",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 248.49
+        },
+        {
+          "query_id": "218",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 353.67
+        },
+        {
+          "query_id": "219",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 328.64
+        },
+        {
+          "query_id": "230",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 446.27
+        },
+        {
+          "query_id": "232",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 374.22
+        },
+        {
+          "query_id": "233",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 232.83
+        },
+        {
+          "query_id": "236",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 324.94
+        },
+        {
+          "query_id": "237",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 223.69
+        },
+        {
+          "query_id": "238",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 138.43
+        },
+        {
+          "query_id": "239",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 214.16
+        },
+        {
+          "query_id": "248",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 73.4
+        },
+        {
+          "query_id": "249",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 99.55
+        },
+        {
+          "query_id": "261",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 273.64
+        },
+        {
+          "query_id": "268",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 34.28
+        },
+        {
+          "query_id": "269",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 20.21
+        },
+        {
+          "query_id": "274",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 84.77
+        },
+        {
+          "query_id": "275",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 3,
+          "latency_ms": 89.46
+        },
+        {
+          "query_id": "279",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 79.28
+        },
+        {
+          "query_id": "294",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 78.28
+        },
+        {
+          "query_id": "295",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 95.04
+        },
+        {
+          "query_id": "298",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 216.24
+        },
+        {
+          "query_id": "300",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 235.08
+        },
+        {
+          "query_id": "303",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 371.8
+        },
+        {
+          "query_id": "312",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 360.98
+        },
+        {
+          "query_id": "314",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 272.57
+        },
+        {
+          "query_id": "324",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 35.68
+        },
+        {
+          "query_id": "327",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 446.38
+        },
+        {
+          "query_id": "338",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 325.26
+        },
+        {
+          "query_id": "343",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 268.5
+        },
+        {
+          "query_id": "350",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 399.72
+        },
+        {
+          "query_id": "354",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 413.14
+        },
+        {
+          "query_id": "362",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 370.92
+        },
+        {
+          "query_id": "380",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 415.97
+        },
+        {
+          "query_id": "384",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 346.24
+        },
+        {
+          "query_id": "385",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 190.38
+        },
+        {
+          "query_id": "386",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 222.1
+        },
+        {
+          "query_id": "388",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 338.35
+        },
+        {
+          "query_id": "399",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 263.28
+        },
+        {
+          "query_id": "410",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 193.54
+        },
+        {
+          "query_id": "411",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 266.53
+        },
+        {
+          "query_id": "415",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 373.1
+        },
+        {
+          "query_id": "421",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 341.35
+        },
+        {
+          "query_id": "431",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 377.41
+        },
+        {
+          "query_id": "436",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 334.54
+        },
+        {
+          "query_id": "437",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 350.84
+        },
+        {
+          "query_id": "439",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 323.43
+        },
+        {
+          "query_id": "440",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 382.02
+        },
+        {
+          "query_id": "443",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 328.99
+        },
+        {
+          "query_id": "452",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 136.75
+        },
+        {
+          "query_id": "475",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 315.42
+        },
+        {
+          "query_id": "478",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 394.69
+        },
+        {
+          "query_id": "491",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 394.11
+        },
+        {
+          "query_id": "501",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 297.77
+        },
+        {
+          "query_id": "502",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 346.09
+        },
+        {
+          "query_id": "507",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 402.52
+        },
+        {
+          "query_id": "508",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 389.91
+        },
+        {
+          "query_id": "513",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 114.2
+        },
+        {
+          "query_id": "514",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 446.57
+        },
+        {
+          "query_id": "516",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 391.63
+        },
+        {
+          "query_id": "517",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 344.03
+        },
+        {
+          "query_id": "521",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 264.61
+        },
+        {
+          "query_id": "525",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 220.87
+        },
+        {
+          "query_id": "527",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 269.12
+        },
+        {
+          "query_id": "528",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 333.06
+        },
+        {
+          "query_id": "532",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 333.65
+        },
+        {
+          "query_id": "533",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 265.11
+        },
+        {
+          "query_id": "535",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 189.0
+        },
+        {
+          "query_id": "536",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 222.34
+        },
+        {
+          "query_id": "539",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 434.09
+        },
+        {
+          "query_id": "540",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 232.7
+        },
+        {
+          "query_id": "544",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 142.55
+        },
+        {
+          "query_id": "549",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 113.1
+        },
+        {
+          "query_id": "551",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 366.84
+        },
+        {
+          "query_id": "552",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 347.99
+        },
+        {
+          "query_id": "554",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 269.81
+        },
+        {
+          "query_id": "560",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 438.3
+        },
+        {
+          "query_id": "569",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 250.4
+        },
+        {
+          "query_id": "575",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 329.81
+        },
+        {
+          "query_id": "577",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 309.1
+        },
+        {
+          "query_id": "578",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 317.58
+        },
+        {
+          "query_id": "587",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 398.61
+        },
+        {
+          "query_id": "589",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 410.43
+        },
+        {
+          "query_id": "593",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 378.95
+        },
+        {
+          "query_id": "597",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 326.5
+        },
+        {
+          "query_id": "598",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 345.08
+        },
+        {
+          "query_id": "613",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 136.31
+        },
+        {
+          "query_id": "619",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 253.95
+        },
+        {
+          "query_id": "623",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 339.26
+        },
+        {
+          "query_id": "628",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 307.33
+        },
+        {
+          "query_id": "636",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 78.31
+        },
+        {
+          "query_id": "637",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 340.24
+        },
+        {
+          "query_id": "641",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 202.86
+        },
+        {
+          "query_id": "644",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 340.21
+        },
+        {
+          "query_id": "649",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 192.63
+        },
+        {
+          "query_id": "659",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 352.02
+        },
+        {
+          "query_id": "660",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 312.25
+        },
+        {
+          "query_id": "674",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 266.73
+        },
+        {
+          "query_id": "684",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 374.16
+        },
+        {
+          "query_id": "690",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 430.74
+        },
+        {
+          "query_id": "691",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 370.46
+        },
+        {
+          "query_id": "692",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 402.94
+        },
+        {
+          "query_id": "693",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 347.23
+        },
+        {
+          "query_id": "700",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 369.62
+        },
+        {
+          "query_id": "702",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 324.2
+        },
+        {
+          "query_id": "715",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 281.96
+        },
+        {
+          "query_id": "716",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 367.51
+        },
+        {
+          "query_id": "718",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 290.54
+        },
+        {
+          "query_id": "721",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 345.35
+        },
+        {
+          "query_id": "723",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 329.12
+        },
+        {
+          "query_id": "727",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 310.22
+        },
+        {
+          "query_id": "728",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 151.45
+        },
+        {
+          "query_id": "729",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 345.34
+        },
+        {
+          "query_id": "742",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 159.65
+        },
+        {
+          "query_id": "743",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 39.25
+        },
+        {
+          "query_id": "744",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 321.5
+        },
+        {
+          "query_id": "756",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 357.94
+        },
+        {
+          "query_id": "759",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 379.54
+        },
+        {
+          "query_id": "768",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 295.43
+        },
+        {
+          "query_id": "770",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 261.35
+        },
+        {
+          "query_id": "775",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 295.46
+        },
+        {
+          "query_id": "781",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 333.72
+        },
+        {
+          "query_id": "783",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 339.4
+        },
+        {
+          "query_id": "784",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 433.07
+        },
+        {
+          "query_id": "785",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 326.63
+        },
+        {
+          "query_id": "793",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 295.54
+        },
+        {
+          "query_id": "800",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 443.13
+        },
+        {
+          "query_id": "805",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 366.68
+        },
+        {
+          "query_id": "808",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 357.61
+        },
+        {
+          "query_id": "811",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 331.68
+        },
+        {
+          "query_id": "814",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 434.83
+        },
+        {
+          "query_id": "820",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 47.5
+        },
+        {
+          "query_id": "821",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 47.4
+        },
+        {
+          "query_id": "823",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 170.16
+        },
+        {
+          "query_id": "830",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 397.99
+        },
+        {
+          "query_id": "831",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 422.01
+        },
+        {
+          "query_id": "832",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 97.96
+        },
+        {
+          "query_id": "834",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 270.4
+        },
+        {
+          "query_id": "837",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 372.66
+        },
+        {
+          "query_id": "839",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 300.55
+        },
+        {
+          "query_id": "845",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 210.18
+        },
+        {
+          "query_id": "847",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 352.21
+        },
+        {
+          "query_id": "852",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 380.51
+        },
+        {
+          "query_id": "859",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 265.12
+        },
+        {
+          "query_id": "870",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 64.42
+        },
+        {
+          "query_id": "873",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 5,
+          "latency_ms": 301.45
+        },
+        {
+          "query_id": "879",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 404.64
+        },
+        {
+          "query_id": "880",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 235.71
+        },
+        {
+          "query_id": "882",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 104.15
+        },
+        {
+          "query_id": "887",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 356.49
+        },
+        {
+          "query_id": "903",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 259.62
+        },
+        {
+          "query_id": "904",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 267.43
+        },
+        {
+          "query_id": "907",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 262.96
+        },
+        {
+          "query_id": "911",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 393.75
+        },
+        {
+          "query_id": "913",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 198.44
+        },
+        {
+          "query_id": "914",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 260.53
+        },
+        {
+          "query_id": "921",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 273.79
+        },
+        {
+          "query_id": "922",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 349.98
+        },
+        {
+          "query_id": "936",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 345.26
+        },
+        {
+          "query_id": "956",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 371.83
+        },
+        {
+          "query_id": "957",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 371.18
+        },
+        {
+          "query_id": "960",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 21.82
+        },
+        {
+          "query_id": "967",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 86.43
+        },
+        {
+          "query_id": "971",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 4,
+          "gold_count": 4,
+          "latency_ms": 170.98
+        },
+        {
+          "query_id": "975",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 210.49
+        },
+        {
+          "query_id": "982",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 198.38
+        },
+        {
+          "query_id": "985",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 356.53
+        },
+        {
+          "query_id": "993",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 324.5
+        },
+        {
+          "query_id": "1012",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 338.6
+        },
+        {
+          "query_id": "1014",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 341.86
+        },
+        {
+          "query_id": "1019",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 331.47
+        },
+        {
+          "query_id": "1020",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 432.67
+        },
+        {
+          "query_id": "1021",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 404.19
+        },
+        {
+          "query_id": "1024",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 335.09
+        },
+        {
+          "query_id": "1029",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 2,
+          "gold_count": 3,
+          "latency_ms": 401.52
+        },
+        {
+          "query_id": "1041",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 357.21
+        },
+        {
+          "query_id": "1049",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 362.76
+        },
+        {
+          "query_id": "1062",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 14.44
+        },
+        {
+          "query_id": "1086",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 228.75
+        },
+        {
+          "query_id": "1088",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 218.85
+        },
+        {
+          "query_id": "1089",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 338.27
+        },
+        {
+          "query_id": "1099",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 51.16
+        },
+        {
+          "query_id": "1100",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 79.5
+        },
+        {
+          "query_id": "1104",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 448.64
+        },
+        {
+          "query_id": "1107",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 113.03
+        },
+        {
+          "query_id": "1110",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 367.01
+        },
+        {
+          "query_id": "1121",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 381.11
+        },
+        {
+          "query_id": "1130",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 305.51
+        },
+        {
+          "query_id": "1132",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 388.86
+        },
+        {
+          "query_id": "1137",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 348.65
+        },
+        {
+          "query_id": "1140",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 381.3
+        },
+        {
+          "query_id": "1144",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 399.51
+        },
+        {
+          "query_id": "1146",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 132.33
+        },
+        {
+          "query_id": "1150",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 276.33
+        },
+        {
+          "query_id": "1163",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 371.37
+        },
+        {
+          "query_id": "1175",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 284.7
+        },
+        {
+          "query_id": "1179",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 339.9
+        },
+        {
+          "query_id": "1180",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 271.04
+        },
+        {
+          "query_id": "1185",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 446.47
+        },
+        {
+          "query_id": "1187",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 336.61
+        },
+        {
+          "query_id": "1191",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 290.55
+        },
+        {
+          "query_id": "1194",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 323.07
+        },
+        {
+          "query_id": "1196",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 315.41
+        },
+        {
+          "query_id": "1197",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 277.34
+        },
+        {
+          "query_id": "1199",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 307.69
+        },
+        {
+          "query_id": "1200",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 346.42
+        },
+        {
+          "query_id": "1202",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 222.29
+        },
+        {
+          "query_id": "1204",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 308.74
+        },
+        {
+          "query_id": "1207",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 339.5
+        },
+        {
+          "query_id": "1213",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 383.27
+        },
+        {
+          "query_id": "1216",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 407.59
+        },
+        {
+          "query_id": "1221",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 396.29
+        },
+        {
+          "query_id": "1225",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 381.54
+        },
+        {
+          "query_id": "1226",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 363.92
+        },
+        {
+          "query_id": "1232",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 406.55
+        },
+        {
+          "query_id": "1241",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 430.22
+        },
+        {
+          "query_id": "1245",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 324.01
+        },
+        {
+          "query_id": "1259",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 268.13
+        },
+        {
+          "query_id": "1262",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 228.38
+        },
+        {
+          "query_id": "1266",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 381.58
+        },
+        {
+          "query_id": "1270",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 339.19
+        },
+        {
+          "query_id": "1271",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 269.21
+        },
+        {
+          "query_id": "1272",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 288.9
+        },
+        {
+          "query_id": "1273",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 205.06
+        },
+        {
+          "query_id": "1274",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 237.41
+        },
+        {
+          "query_id": "1278",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 360.69
+        },
+        {
+          "query_id": "1279",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 351.22
+        },
+        {
+          "query_id": "1280",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 383.35
+        },
+        {
+          "query_id": "1281",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 287.9
+        },
+        {
+          "query_id": "1282",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 369.41
+        },
+        {
+          "query_id": "1290",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 356.54
+        },
+        {
+          "query_id": "1292",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 244.31
+        },
+        {
+          "query_id": "1298",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 359.19
+        },
+        {
+          "query_id": "1303",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 161.74
+        },
+        {
+          "query_id": "1316",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 334.79
+        },
+        {
+          "query_id": "1319",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 301.29
+        },
+        {
+          "query_id": "1320",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 367.27
+        },
+        {
+          "query_id": "1332",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 307.03
+        },
+        {
+          "query_id": "1335",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 190.22
+        },
+        {
+          "query_id": "1336",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 110.15
+        },
+        {
+          "query_id": "1337",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 122.33
+        },
+        {
+          "query_id": "1339",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 396.94
+        },
+        {
+          "query_id": "1344",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 413.65
+        },
+        {
+          "query_id": "1352",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 355.21
+        },
+        {
+          "query_id": "1359",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 402.25
+        },
+        {
+          "query_id": "1362",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 184.37
+        },
+        {
+          "query_id": "1363",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 161.86
+        },
+        {
+          "query_id": "1368",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 311.11
+        },
+        {
+          "query_id": "1370",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 341.67
+        },
+        {
+          "query_id": "1379",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 4,
+          "latency_ms": 377.64
+        },
+        {
+          "query_id": "1382",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 242.85
+        },
+        {
+          "query_id": "1385",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 53.34
+        },
+        {
+          "query_id": "1389",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 93.86
+        },
+        {
+          "query_id": "1395",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 386.33
+        }
+      ]
+    },
+    "hybrid": {
+      "hit_at_k": 0.8566666666666667,
+      "recall_at_k": 0.8402777777777778,
+      "mrr": 0.6489060846560847,
+      "ndcg_at_k": 0.6898085089704935,
+      "queries": 300,
+      "confidence_intervals": {
+        "hit_at_k": {
+          "low": 0.8166666666666667,
+          "high": 0.8933333333333333
+        },
+        "recall_at_k": {
+          "low": 0.7983333333333333,
+          "high": 0.8784444444444444
+        },
+        "mrr": {
+          "low": 0.6004325396825394,
+          "high": 0.6949894179894182
+        },
+        "ndcg_at_k": {
+          "low": 0.6437437012707186,
+          "high": 0.729336322642616
+        }
+      },
+      "latency_ms": {
+        "mean_ms": 990.96,
+        "p50_ms": 998.05,
+        "p95_ms": 1289.0,
+        "max_ms": 1564.77
+      },
+      "rows": [
+        {
+          "query_id": "1",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1230.12
+        },
+        {
+          "query_id": "3",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 965.66
+        },
+        {
+          "query_id": "5",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1025.62
+        },
+        {
+          "query_id": "13",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 976.2
+        },
+        {
+          "query_id": "36",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 1036.95
+        },
+        {
+          "query_id": "42",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 947.17
+        },
+        {
+          "query_id": "48",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1313.11
+        },
+        {
+          "query_id": "49",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 834.29
+        },
+        {
+          "query_id": "50",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 996.6
+        },
+        {
+          "query_id": "51",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1092.9
+        },
+        {
+          "query_id": "53",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 983.14
+        },
+        {
+          "query_id": "54",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 941.6
+        },
+        {
+          "query_id": "56",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1361.53
+        },
+        {
+          "query_id": "57",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 970.63
+        },
+        {
+          "query_id": "70",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 1237.11
+        },
+        {
+          "query_id": "72",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1028.64
+        },
+        {
+          "query_id": "75",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1032.09
+        },
+        {
+          "query_id": "94",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 733.98
+        },
+        {
+          "query_id": "99",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1283.14
+        },
+        {
+          "query_id": "100",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 927.41
+        },
+        {
+          "query_id": "113",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1033.58
+        },
+        {
+          "query_id": "115",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1031.54
+        },
+        {
+          "query_id": "118",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1393.42
+        },
+        {
+          "query_id": "124",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 740.6
+        },
+        {
+          "query_id": "127",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1106.7
+        },
+        {
+          "query_id": "128",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 723.4
+        },
+        {
+          "query_id": "129",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1163.72
+        },
+        {
+          "query_id": "130",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1309.86
+        },
+        {
+          "query_id": "132",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1014.29
+        },
+        {
+          "query_id": "133",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 4,
+          "gold_count": 5,
+          "latency_ms": 1045.82
+        },
+        {
+          "query_id": "137",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1066.24
+        },
+        {
+          "query_id": "141",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 1073.16
+        },
+        {
+          "query_id": "142",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1059.36
+        },
+        {
+          "query_id": "143",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 998.05
+        },
+        {
+          "query_id": "146",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1048.4
+        },
+        {
+          "query_id": "148",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 987.67
+        },
+        {
+          "query_id": "163",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1110.62
+        },
+        {
+          "query_id": "171",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 838.64
+        },
+        {
+          "query_id": "179",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 3,
+          "gold_count": 4,
+          "latency_ms": 847.89
+        },
+        {
+          "query_id": "180",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 823.48
+        },
+        {
+          "query_id": "183",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1047.36
+        },
+        {
+          "query_id": "185",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 990.4
+        },
+        {
+          "query_id": "198",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 925.16
+        },
+        {
+          "query_id": "208",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1172.55
+        },
+        {
+          "query_id": "212",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1059.09
+        },
+        {
+          "query_id": "213",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1011.66
+        },
+        {
+          "query_id": "216",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 986.73
+        },
+        {
+          "query_id": "217",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1013.92
+        },
+        {
+          "query_id": "218",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 906.01
+        },
+        {
+          "query_id": "219",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 989.43
+        },
+        {
+          "query_id": "230",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1104.04
+        },
+        {
+          "query_id": "232",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1072.32
+        },
+        {
+          "query_id": "233",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1083.22
+        },
+        {
+          "query_id": "236",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1059.28
+        },
+        {
+          "query_id": "237",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 836.16
+        },
+        {
+          "query_id": "238",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 790.38
+        },
+        {
+          "query_id": "239",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 881.99
+        },
+        {
+          "query_id": "248",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 907.32
+        },
+        {
+          "query_id": "249",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 691.11
+        },
+        {
+          "query_id": "261",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 899.45
+        },
+        {
+          "query_id": "268",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 920.41
+        },
+        {
+          "query_id": "269",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 829.61
+        },
+        {
+          "query_id": "274",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1141.88
+        },
+        {
+          "query_id": "275",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 3,
+          "latency_ms": 1010.23
+        },
+        {
+          "query_id": "279",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1081.77
+        },
+        {
+          "query_id": "294",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 914.52
+        },
+        {
+          "query_id": "295",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1027.76
+        },
+        {
+          "query_id": "298",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 871.66
+        },
+        {
+          "query_id": "300",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1074.56
+        },
+        {
+          "query_id": "303",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1044.55
+        },
+        {
+          "query_id": "312",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1163.15
+        },
+        {
+          "query_id": "314",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1154.99
+        },
+        {
+          "query_id": "324",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1097.59
+        },
+        {
+          "query_id": "327",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1564.77
+        },
+        {
+          "query_id": "338",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1171.34
+        },
+        {
+          "query_id": "343",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 928.37
+        },
+        {
+          "query_id": "350",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 988.86
+        },
+        {
+          "query_id": "354",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 736.4
+        },
+        {
+          "query_id": "362",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1206.37
+        },
+        {
+          "query_id": "380",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1094.26
+        },
+        {
+          "query_id": "384",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 999.54
+        },
+        {
+          "query_id": "385",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 1092.18
+        },
+        {
+          "query_id": "386",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1122.49
+        },
+        {
+          "query_id": "388",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1191.11
+        },
+        {
+          "query_id": "399",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 968.21
+        },
+        {
+          "query_id": "410",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1091.88
+        },
+        {
+          "query_id": "411",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1205.37
+        },
+        {
+          "query_id": "415",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1302.92
+        },
+        {
+          "query_id": "421",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1217.98
+        },
+        {
+          "query_id": "431",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1152.81
+        },
+        {
+          "query_id": "436",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 907.45
+        },
+        {
+          "query_id": "437",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1010.04
+        },
+        {
+          "query_id": "439",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1066.84
+        },
+        {
+          "query_id": "440",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1000.71
+        },
+        {
+          "query_id": "443",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1038.07
+        },
+        {
+          "query_id": "452",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 974.22
+        },
+        {
+          "query_id": "475",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1069.02
+        },
+        {
+          "query_id": "478",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1128.42
+        },
+        {
+          "query_id": "491",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 974.41
+        },
+        {
+          "query_id": "501",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 887.31
+        },
+        {
+          "query_id": "502",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1115.39
+        },
+        {
+          "query_id": "507",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1210.85
+        },
+        {
+          "query_id": "508",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 987.01
+        },
+        {
+          "query_id": "513",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 931.18
+        },
+        {
+          "query_id": "514",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1118.55
+        },
+        {
+          "query_id": "516",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 896.08
+        },
+        {
+          "query_id": "517",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1051.33
+        },
+        {
+          "query_id": "521",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1049.34
+        },
+        {
+          "query_id": "525",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 871.97
+        },
+        {
+          "query_id": "527",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1018.85
+        },
+        {
+          "query_id": "528",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1121.94
+        },
+        {
+          "query_id": "532",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1053.01
+        },
+        {
+          "query_id": "533",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1086.16
+        },
+        {
+          "query_id": "535",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1314.03
+        },
+        {
+          "query_id": "536",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1415.44
+        },
+        {
+          "query_id": "539",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1152.83
+        },
+        {
+          "query_id": "540",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 932.94
+        },
+        {
+          "query_id": "544",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 919.37
+        },
+        {
+          "query_id": "549",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 980.36
+        },
+        {
+          "query_id": "551",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1056.79
+        },
+        {
+          "query_id": "552",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1069.37
+        },
+        {
+          "query_id": "554",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1349.87
+        },
+        {
+          "query_id": "560",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1073.83
+        },
+        {
+          "query_id": "569",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 984.17
+        },
+        {
+          "query_id": "575",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1087.99
+        },
+        {
+          "query_id": "577",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1080.84
+        },
+        {
+          "query_id": "578",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1022.6
+        },
+        {
+          "query_id": "587",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1010.04
+        },
+        {
+          "query_id": "589",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1144.6
+        },
+        {
+          "query_id": "593",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1013.38
+        },
+        {
+          "query_id": "597",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 763.22
+        },
+        {
+          "query_id": "598",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1022.98
+        },
+        {
+          "query_id": "613",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 864.96
+        },
+        {
+          "query_id": "619",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 2,
+          "latency_ms": 1064.51
+        },
+        {
+          "query_id": "623",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 996.32
+        },
+        {
+          "query_id": "628",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1257.71
+        },
+        {
+          "query_id": "636",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1121.91
+        },
+        {
+          "query_id": "637",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1095.73
+        },
+        {
+          "query_id": "641",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 1063.28
+        },
+        {
+          "query_id": "644",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1289.0
+        },
+        {
+          "query_id": "649",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1085.87
+        },
+        {
+          "query_id": "659",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 909.96
+        },
+        {
+          "query_id": "660",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 973.9
+        },
+        {
+          "query_id": "674",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1124.14
+        },
+        {
+          "query_id": "684",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 972.08
+        },
+        {
+          "query_id": "690",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1233.37
+        },
+        {
+          "query_id": "691",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 590.45
+        },
+        {
+          "query_id": "692",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 461.55
+        },
+        {
+          "query_id": "693",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 452.05
+        },
+        {
+          "query_id": "700",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 475.89
+        },
+        {
+          "query_id": "702",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 471.07
+        },
+        {
+          "query_id": "715",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 470.71
+        },
+        {
+          "query_id": "716",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 459.87
+        },
+        {
+          "query_id": "718",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 449.06
+        },
+        {
+          "query_id": "721",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 754.59
+        },
+        {
+          "query_id": "723",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 932.38
+        },
+        {
+          "query_id": "727",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1005.47
+        },
+        {
+          "query_id": "728",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 862.71
+        },
+        {
+          "query_id": "729",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1025.45
+        },
+        {
+          "query_id": "742",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 948.35
+        },
+        {
+          "query_id": "743",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 818.42
+        },
+        {
+          "query_id": "744",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1005.79
+        },
+        {
+          "query_id": "756",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1062.55
+        },
+        {
+          "query_id": "759",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1035.9
+        },
+        {
+          "query_id": "768",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 989.69
+        },
+        {
+          "query_id": "770",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1083.92
+        },
+        {
+          "query_id": "775",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 749.24
+        },
+        {
+          "query_id": "781",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 900.88
+        },
+        {
+          "query_id": "783",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1092.42
+        },
+        {
+          "query_id": "784",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 915.35
+        },
+        {
+          "query_id": "785",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1024.81
+        },
+        {
+          "query_id": "793",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 934.03
+        },
+        {
+          "query_id": "800",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 976.05
+        },
+        {
+          "query_id": "805",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1255.3
+        },
+        {
+          "query_id": "808",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1098.54
+        },
+        {
+          "query_id": "811",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 935.21
+        },
+        {
+          "query_id": "814",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1111.24
+        },
+        {
+          "query_id": "820",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1017.2
+        },
+        {
+          "query_id": "821",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 814.28
+        },
+        {
+          "query_id": "823",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 802.11
+        },
+        {
+          "query_id": "830",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1022.45
+        },
+        {
+          "query_id": "831",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 980.3
+        },
+        {
+          "query_id": "832",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 902.33
+        },
+        {
+          "query_id": "834",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 847.92
+        },
+        {
+          "query_id": "837",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 899.53
+        },
+        {
+          "query_id": "839",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 862.4
+        },
+        {
+          "query_id": "845",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 816.06
+        },
+        {
+          "query_id": "847",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 823.52
+        },
+        {
+          "query_id": "852",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 821.08
+        },
+        {
+          "query_id": "859",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 704.63
+        },
+        {
+          "query_id": "870",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 430.54
+        },
+        {
+          "query_id": "873",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 5,
+          "latency_ms": 782.51
+        },
+        {
+          "query_id": "879",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 853.25
+        },
+        {
+          "query_id": "880",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 801.65
+        },
+        {
+          "query_id": "882",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 800.24
+        },
+        {
+          "query_id": "887",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 797.55
+        },
+        {
+          "query_id": "903",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 798.83
+        },
+        {
+          "query_id": "904",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 861.76
+        },
+        {
+          "query_id": "907",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 843.04
+        },
+        {
+          "query_id": "911",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 848.73
+        },
+        {
+          "query_id": "913",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 880.19
+        },
+        {
+          "query_id": "914",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 844.6
+        },
+        {
+          "query_id": "921",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1108.22
+        },
+        {
+          "query_id": "922",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 852.57
+        },
+        {
+          "query_id": "936",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 891.48
+        },
+        {
+          "query_id": "956",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 865.78
+        },
+        {
+          "query_id": "957",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 859.7
+        },
+        {
+          "query_id": "960",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 871.75
+        },
+        {
+          "query_id": "967",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 964.46
+        },
+        {
+          "query_id": "971",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 4,
+          "gold_count": 4,
+          "latency_ms": 950.47
+        },
+        {
+          "query_id": "975",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 819.01
+        },
+        {
+          "query_id": "982",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 857.67
+        },
+        {
+          "query_id": "985",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 817.93
+        },
+        {
+          "query_id": "993",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 838.58
+        },
+        {
+          "query_id": "1012",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1016.35
+        },
+        {
+          "query_id": "1014",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1236.83
+        },
+        {
+          "query_id": "1019",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1300.13
+        },
+        {
+          "query_id": "1020",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1386.44
+        },
+        {
+          "query_id": "1021",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1386.57
+        },
+        {
+          "query_id": "1024",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1332.37
+        },
+        {
+          "query_id": "1029",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 1120.07
+        },
+        {
+          "query_id": "1041",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 2,
+          "gold_count": 2,
+          "latency_ms": 937.96
+        },
+        {
+          "query_id": "1049",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 857.7
+        },
+        {
+          "query_id": "1062",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 798.01
+        },
+        {
+          "query_id": "1086",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 943.61
+        },
+        {
+          "query_id": "1088",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 944.61
+        },
+        {
+          "query_id": "1089",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 884.03
+        },
+        {
+          "query_id": "1099",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 765.39
+        },
+        {
+          "query_id": "1100",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 916.58
+        },
+        {
+          "query_id": "1104",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1051.56
+        },
+        {
+          "query_id": "1107",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 824.4
+        },
+        {
+          "query_id": "1110",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 871.11
+        },
+        {
+          "query_id": "1121",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1105.65
+        },
+        {
+          "query_id": "1130",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1033.07
+        },
+        {
+          "query_id": "1132",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 2,
+          "latency_ms": 832.45
+        },
+        {
+          "query_id": "1137",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1040.59
+        },
+        {
+          "query_id": "1140",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 989.0
+        },
+        {
+          "query_id": "1144",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1040.38
+        },
+        {
+          "query_id": "1146",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 988.28
+        },
+        {
+          "query_id": "1150",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 824.45
+        },
+        {
+          "query_id": "1163",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 979.11
+        },
+        {
+          "query_id": "1175",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1008.17
+        },
+        {
+          "query_id": "1179",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 982.45
+        },
+        {
+          "query_id": "1180",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 899.33
+        },
+        {
+          "query_id": "1185",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 888.08
+        },
+        {
+          "query_id": "1187",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 980.62
+        },
+        {
+          "query_id": "1191",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1031.16
+        },
+        {
+          "query_id": "1194",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 885.05
+        },
+        {
+          "query_id": "1196",
+          "first_relevant_rank": 7,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 833.65
+        },
+        {
+          "query_id": "1197",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1097.96
+        },
+        {
+          "query_id": "1199",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1161.63
+        },
+        {
+          "query_id": "1200",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1150.85
+        },
+        {
+          "query_id": "1202",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1076.64
+        },
+        {
+          "query_id": "1204",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1029.48
+        },
+        {
+          "query_id": "1207",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1010.41
+        },
+        {
+          "query_id": "1213",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1170.63
+        },
+        {
+          "query_id": "1216",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 942.59
+        },
+        {
+          "query_id": "1221",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1077.42
+        },
+        {
+          "query_id": "1225",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1195.71
+        },
+        {
+          "query_id": "1226",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1117.51
+        },
+        {
+          "query_id": "1232",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1060.66
+        },
+        {
+          "query_id": "1241",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 781.89
+        },
+        {
+          "query_id": "1245",
+          "first_relevant_rank": 3,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 972.9
+        },
+        {
+          "query_id": "1259",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 951.43
+        },
+        {
+          "query_id": "1262",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1237.8
+        },
+        {
+          "query_id": "1266",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1020.21
+        },
+        {
+          "query_id": "1270",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1003.1
+        },
+        {
+          "query_id": "1271",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 929.14
+        },
+        {
+          "query_id": "1272",
+          "first_relevant_rank": 10,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1064.54
+        },
+        {
+          "query_id": "1273",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 823.02
+        },
+        {
+          "query_id": "1274",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 3,
+          "gold_count": 3,
+          "latency_ms": 983.8
+        },
+        {
+          "query_id": "1278",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1034.97
+        },
+        {
+          "query_id": "1279",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 975.28
+        },
+        {
+          "query_id": "1280",
+          "first_relevant_rank": 9,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 958.15
+        },
+        {
+          "query_id": "1281",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1098.78
+        },
+        {
+          "query_id": "1282",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1020.54
+        },
+        {
+          "query_id": "1290",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 948.0
+        },
+        {
+          "query_id": "1292",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1028.26
+        },
+        {
+          "query_id": "1298",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1154.36
+        },
+        {
+          "query_id": "1303",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1252.5
+        },
+        {
+          "query_id": "1316",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1170.82
+        },
+        {
+          "query_id": "1319",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1129.69
+        },
+        {
+          "query_id": "1320",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1040.11
+        },
+        {
+          "query_id": "1332",
+          "first_relevant_rank": null,
+          "relevant_in_top_k": 0,
+          "gold_count": 1,
+          "latency_ms": 1160.67
+        },
+        {
+          "query_id": "1335",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 886.61
+        },
+        {
+          "query_id": "1336",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 899.71
+        },
+        {
+          "query_id": "1337",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 926.57
+        },
+        {
+          "query_id": "1339",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1328.01
+        },
+        {
+          "query_id": "1344",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1465.59
+        },
+        {
+          "query_id": "1352",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 977.0
+        },
+        {
+          "query_id": "1359",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 974.56
+        },
+        {
+          "query_id": "1362",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 929.24
+        },
+        {
+          "query_id": "1363",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 768.58
+        },
+        {
+          "query_id": "1368",
+          "first_relevant_rank": 8,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 1031.65
+        },
+        {
+          "query_id": "1370",
+          "first_relevant_rank": 5,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 971.35
+        },
+        {
+          "query_id": "1379",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 4,
+          "gold_count": 4,
+          "latency_ms": 1001.46
+        },
+        {
+          "query_id": "1382",
+          "first_relevant_rank": 6,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 908.47
+        },
+        {
+          "query_id": "1385",
+          "first_relevant_rank": 2,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 681.66
+        },
+        {
+          "query_id": "1389",
+          "first_relevant_rank": 1,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 753.71
+        },
+        {
+          "query_id": "1395",
+          "first_relevant_rank": 4,
+          "relevant_in_top_k": 1,
+          "gold_count": 1,
+          "latency_ms": 988.87
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "hybrid_minus_bm25_hit": 0.08000000000000007,
+    "hybrid_minus_vector_hit": 0.026666666666666727,
+    "hybrid_minus_bm25_ndcg": 0.05875891610213779,
+    "hybrid_minus_vector_ndcg": 0.018421059922873018
+  }
+}

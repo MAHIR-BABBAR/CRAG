@@ -1,13 +1,42 @@
 # Environments
 .env
-.venv
+.env.*
+!.env.example
+.venv/
 env/
 venv/
 
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
 
-# RAG Database
+# Local index and eval caches
 workspace_index/
 *.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+.cache/
+.hf_cache/
+
+# Working notes and reference material (not part of the project)
+*.pdf
+notes/
+scratch/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

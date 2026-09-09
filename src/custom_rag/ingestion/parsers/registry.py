@@ -28,3 +28,11 @@ class ParserRegistry:
     @property
     def parsers(self) -> tuple[Parser, ...]:
         return tuple(self._parsers)
+
+    @property
+    def supported_extensions(self) -> frozenset[str]:
+        """Every extension some registered parser claims."""
+        extensions: set[str] = set()
+        for parser in self._parsers:
+            extensions.update(parser.supported_extensions)
+        return frozenset(extensions)

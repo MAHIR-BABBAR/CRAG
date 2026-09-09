@@ -37,8 +37,8 @@ class HTMLParser(BaseParser):
             raise ParseFailedError(str(path), "unable to parse HTML", cause=exc) from exc
 
         for tag_name in _STRIP_TAGS:
-            for tag in soup.find_all(tag_name):
-                tag.decompose()
+            for node in soup.find_all(tag_name):
+                node.decompose()
 
         builder = BlockBuilder()
         section_stack: list[tuple[str, int]] = []
@@ -52,7 +52,7 @@ class HTMLParser(BaseParser):
             if not content:
                 continue
 
-            tag = element.name.lower()
+            tag = str(element.name).lower()
             if tag in _HEADING_TAGS:
                 section_counter += 1
                 block_id = f"sec_{section_counter}"
